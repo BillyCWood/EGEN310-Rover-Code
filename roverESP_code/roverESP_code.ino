@@ -1,14 +1,14 @@
 #include<PS4Controller.h>
 #include "driver/gpio.h"//<-- THIS IS IMPORTANT; IT ALLOWS US TO ACTUALLY USE THE PINS ON THE ESP32 FOR IO
-//#include<Servo.h>
+#include<ESP32Servo.h>
 
 
 unsigned long lastTimeStamp = 0;
 
 //Servo
-//Servo goatedServo;
+Servo shovelServo;
 
-// int RECV_PIN = ; <- might not need this idk -\_(o.o)_/-
+int RECV_PIN = 22;
 int LINP_1_PIN = 26;
 int LINP_2_PIN = 27;
 int LPWMA = 13;
@@ -30,12 +30,17 @@ void setup() {
 
   Serial.println("Initialization Ready!");
 
+
+  pinMode(RECV_PIN, OUTPUT);
   pinMode(LINP_1_PIN, OUTPUT);
   pinMode(LINP_2_PIN, OUTPUT);
   pinMode(RINP_1_PIN, OUTPUT);
   pinMode(RINP_2_PIN, OUTPUT);
   pinMode(LPWMA, OUTPUT);
   pinMode(RPWMA, OUTPUT);
+
+  shovelServo.attach(RECV_PIN);
+  shovelServo.write(-30);
 
 }
 
@@ -51,11 +56,16 @@ void notify(){
 
   int LY = PS4.LStickY();
   int RY = PS4.RStickY();
+  int up = PS4.Up();
+  int down = PS4.Down();
 
   leftMotor(LY);
   rightMotor(RY);
 
-  Serial.printf("LEFT: %4d\tRIGHT: %4d\n", LY, RY);
+  if(up == 1 && down == 0){turnServo(90);}
+  if(down == 1 && up == 0){turnServo(30);}
+
+  Serial.printf("LEFT: %4d\tRIGHT: %4d\tUP: %4d\tDOWN: %4d\n", LY, RY, up, down);
 
 
 }
@@ -119,4 +129,4 @@ void stop(){
   //Serial.printf("GPIO 4: %d\n", digitalRead(z));
 }
 */
-void turnServo(){return;}
+void turnServo(int direction){shovelServo.write(direction);}
