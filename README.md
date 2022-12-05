@@ -27,3 +27,9 @@ To install this library, go to <code>Sketch -> Include Library -> Manage Librari
 ## Uploading Code
 To upload the code from the Arduino IDE, connect a USB to Micro-USB cable from your computer to the ESP32. After the code compiles and is waiting to upload, press and hold the <code>BOOT</code> button to the right of the Micro-USB port until it begins uploading.
 
+## Stakeholder
+We partnered with a resource company to build a rover that will extract and transport resources from Planet X. The rover must be able to move forwards and backwards, as well as turn left and right.  The rover must also be able to extract and transport materials.
+
+To move, both joysticks must be held forward or backwards to move in that direction.  For turning, the joysticks must be held in opposing directions, still forwards and backwards, so that it may turn in the direction of forward-held joystick.
+
+A shovel and a bucket is used to extract and transport the materials.  The shovel is controlled using a [MG92B Servo Motor.](https://www.adafruit.com/product/2307) The servo motor moves the shovel up and down and dumps into the holding bucket on the rear of the rover. The servo is controlled using the Directional Pad on the DualShock 4 controller.
