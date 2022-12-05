@@ -1,16 +1,16 @@
 # EGEN 310R Rover Project
-## Section 6 Group B8
-### Group Members - Jason Key, Alix Huhta, Billy Wood, Crandell Sanders, Logan Dahlin
+## Section 6 Group B8 10:00am - 10:50am
+### Group Members - Jason Key, Alix Huhta, Billy Wood (Repo Owner), Crandell Sanders, Logan Dahlin
 ### Instructor - Stacy Turoski
 
-## Setup and Overview
+## Setup
 All coding and integration was done using the [Arduino IDE](https://www.arduino.cc/)
 
 The micro controller used for the rover is the [ESP32-WROOM-32D by Espressif Systems](https://www.espressif.com/en/products/socs/esp32)
 
 In order to properly use the ESP32 microcontroller with the Arduino IDE, it must be added to the board manager. Intructions for this can be found [here.](https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html)
 
-The rover is being controlled using a Playstation 4 DualShock controller via Bluetooth connection using and external library.  The external library's .zip folder must be added to the Arduino IDE's libraries in order to use.
+The rover is being controlled using a Playstation 4 DualShock controller via Bluetooth connection using an external library.  The external library's .zip folder must be added to the Arduino IDE's libraries in order to use.
 
 The .zip folder can be downloaded from this GitHub: https://github.com/aed3/PS4-esp32
 
@@ -23,3 +23,7 @@ Go to <code>Sketch -> Include Library -> Add .ZIP Library</code> and browse for 
 Unfortunately, the built-in <code>Servo.h</code> library is incompatible with the ESP32, and the <code>ESP32Servo.h</code> library ***must*** be used instead.
 
 To install this library, go to <code>Sketch -> Include Library -> Manage Libraries...</code> and search <code>ESP32Servo</code> by Kevin Herrington. Then click <code>Install</code>
+
+## Uploading Code
+To upload the code from the Arduino IDE, connect a USB to Micro-USB cable from your computer to the ESP32. After the code compiles and is waiting to upload, press and hold the <code>BOOT</code> button to the right of the Micro-USB port until it begins uploading.
+
