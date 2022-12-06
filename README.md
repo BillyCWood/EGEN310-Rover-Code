@@ -24,6 +24,8 @@ Unfortunately, the built-in <code>Servo.h</code> library is incompatible with th
 
 To install this library, go to <code>Sketch -> Include Library -> Manage Libraries...</code> and search <code>ESP32Servo</code> by Kevin Herrington. Then click <code>Install</code>
 
+**Restart the IDE**
+
 ## Uploading Code
 To upload the code from the Arduino IDE, connect a USB to Micro-USB cable from your computer to the ESP32. After the code compiles and is waiting to upload, press and hold the <code>BOOT</code> button to the right of the Micro-USB port until it begins uploading.
 
