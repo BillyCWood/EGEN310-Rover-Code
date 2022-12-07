@@ -1,4 +1,4 @@
-#include<PS4Controller.h>
+ #include<PS4Controller.h>
 #include "driver/gpio.h"//<-- THIS IS IMPORTANT; IT ALLOWS US TO ACTUALLY USE THE PINS ON THE ESP32 FOR IO
 #include<ESP32Servo.h>
 
@@ -40,7 +40,7 @@ void setup() {
   pinMode(RPWMA, OUTPUT);
 
   shovelServo.attach(RECV_PIN);
-  shovelServo.write(-30);
+  shovelServo.write(90);
 
 }
 
@@ -58,12 +58,14 @@ void notify(){
   int RY = PS4.RStickY();
   int up = PS4.Up();
   int down = PS4.Down();
+  int mid = PS4.Right();
 
   leftMotor(LY);
   rightMotor(RY);
 
-  if(up == 1 && down == 0){turnServo(90);}
-  if(down == 1 && up == 0){turnServo(30);}
+  if(down == 1){turnServo(40);}
+  if(up == 1){turnServo(180);}
+  if(mid == 1){turnServo(90);}
 
   Serial.printf("LEFT: %4d\tRIGHT: %4d\tUP: %4d\tDOWN: %4d\n", LY, RY, up, down);
 
