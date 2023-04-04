@@ -1,6 +1,6 @@
 # EGEN 310R Rover Project
 ## Section 6 Group B8 10:00am - 10:50am
-### Group Members - Jason Key, Alix Huhta, Billy Wood (Repo Owner), Crandell Sanders, Logan Dahlin
+### Group Members - Jason Key, Alix Huhta, Billy Wood, Crandell Sanders, Logan Dahlin
 ### Instructor - Stacy Turoski
 
 ## Setup
